@@ -19,3 +19,99 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Enhanced Smooth Animation with Bright Colors */
+@keyframes smoothSlideIn {
+  0% {
+    transform: translateX(100%); /* Start from the right, off-screen */
+    opacity: 0; /* Start as invisible */
+  }
+  50% {
+    transform: translateX(0); /* Move to the center, fully visible */
+    opacity: 1; /* Become fully visible */
+  }
+  100% {
+    transform: translateX(-100%); /* Exit to the left, off-screen */
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Apply smooth sliding effect to icons */
+.icon-slide {
+  display: inline-block;
+  animation: smoothSlideIn 10s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  white-space: nowrap;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
+  padding: 0 15px; /* Add spacing between icons */
+}
+
+.icon-container {
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center align all icons */
+  align-items: center;
+  position: relative;
+  width: 100%; /* Make container full width */
+  height: 80px; /* Adjust the height of the container */
+  opacity: 1;
+}
+
+/* To create the illusion of depth */
+.icon-container .icon-slide:nth-child(even) {
+  animation-delay: 4s;
+}
+
+.icon-container .icon-slide:nth-child(odd) {
+  animation-delay: 2s;
+}
+
+.icon-slide i {
+  font-size: 65px; /* Increase size of icons for more impact */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Bright Icon Colors */
+.icon-slide .fas.fa-sun {
+  color: #ffea00; /* Bright Yellow for Sun */
+}
+
+.icon-slide .fas.fa-moon {
+  color: #8a2be2; /* Bright Purple for Moon */
+}
+
+.icon-slide .fas.fa-circle {
+  color: #ff4500; /* Bright Orange for Full Moon */
+}
+
+.icon-slide .fas.fa-adjust {
+  color: #ffff00; /* Bright Yellow for Half Moon */
+}
+
+.icon-slide .fas.fa-cloud-showers-heavy {
+  color: #1e90ff; /* Bright Sky Blue for Rainy Icon */
+}
+
+/* Hover Effects for Extra Impact */
+.icon-slide i:hover {
+  transform: scale(1.1); /* Scale up on hover */
+  color: #ff8c00; /* Change color to a vivid orange on hover */
+}
+
+/* Optional: Add a glowing effect */
+.icon-slide i {
+  animation: glowAnimation 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowAnimation {
+  0% {
+    text-shadow: 0 0 10px rgba(25, 51, 220, 0.5), 0 0 20px rgba(7, 107, 174, 0.5);
+  }
+  10% {
+    text-shadow: 0 0 20px rgb(21, 70, 195), 0 0 40px rgba(43, 71, 196, 0.8);
+  }
+}
+
+
+
+
